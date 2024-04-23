@@ -35,7 +35,7 @@
 
 
       <!--Кнопка доната во всех версиях, кроме мобильной-->
-      <form method="POST" action="https://www.liqpay.ua/api/3/checkout" 
+      <!-- <form class="payment-form" method="POST" action="https://www.liqpay.ua/api/3/checkout" 
       accept-charset="utf-8">
       <input type="hidden" name="data" value="eyAidmVyc2lvbiIgOiAzLCAicHVibGljX2tleSIgOiAieW91cl9wdWJsaWNfa2V5IiwgImFjdGlv
       biIgOiAicGF5IiwgImFtb3VudCIgOiAxLCAiY3VycmVuY3kiIDogIlVTRCIsICJkZXNjcmlwdGlv
@@ -44,7 +44,7 @@
       <button type="submit"
       class="main-btn-donate list"
       alt="DONATE NOW">DONATE NOW</button>
-      </form>
+      </form> -->
       <!--Кнопка доната во всех версиях, кроме мобильной-->
 
       <!-- src="//static.liqpay.ua/buttons/payUk.png"  -->
@@ -52,6 +52,13 @@
       <!-- <lp-provider lp-data="your_data" lp-signature="your_signature">
         <lp-apple-pay mode="black"></lp-apple-pay>
       </lp-provider> -->
+
+      <form id="paymentForm" class="payment-form" action="/makePayment" method="POST">
+        <input type="text" name="amount" placeholder="Сумма оплаты">
+        <input type="submit" value="Оплатить">
+    </form>
+
+
 
       <!--Кнопка открытия мобильного меню-->
       <button type="button" class="mobile-menu-open-btn js-open-menu" aria-expanded="false">
@@ -80,7 +87,7 @@
         </ul>
 
          <!--Кнопка доната мобильной версии-->
-         <form method="POST" action="https://www.liqpay.ua/api/3/checkout" 
+         <!-- <form method="POST" action="https://www.liqpay.ua/api/3/checkout" 
          accept-charset="utf-8"> 
          <input type="hidden" name="data" value="eyAidmVyc2lvbiIgOiAzLCAicHVibGljX2tleSIgOiAieW91cl9wdWJsaWNfa2V5IiwgImFjdGlv
          biIgOiAicGF5IiwgImFtb3VudCIgOiAxLCAiY3VycmVuY3kiIDogIlVTRCIsICJkZXNjcmlwdGlv
@@ -89,7 +96,7 @@
          <button type="submit"
          class="main-btn-donate-mobile list"
          alt="DONATE NOW">DONATE NOW</button>
-         </form>
+         </form> -->
         <!--Кнопка доната мобильной версии-->
 
         <!-- <button type="button" class="main-btn-donate-mobile list" data-modal-open>DONATE NOW</button> -->
@@ -109,7 +116,6 @@
             to special classes, art therapy, theater therapy, as well as individual classes
              with the family. 
         </p>
-
         <!-- <button type="button" class="main-btn list" data-modal-open>DONATE</button> -->
        </div>
     </section> 
@@ -125,9 +131,7 @@
     sirens. We decided to help them as soon as possible directly in Kyiv. Currently, we have
      a project to create a mental and physical care center for children under 7 y.o. from
       scratch. We want to have a brighter & stable future for our young generation.
-
   </p>
-  
 </div>
 </section>
 
@@ -229,8 +233,7 @@
               alt="UI"
               width="264"
             />
-            
-              </a>
+            </a>
             <h3 class="section-partners-subtitle">Ukrainians of Colorado</h3>
           </li>
 
@@ -251,7 +254,6 @@
               alt="UI"
               width="264"
             />
-              
             </a>
             <h3 class="section-partners-subtitle">Вікторія Юрбізнес Груп</h3>
           </li>
