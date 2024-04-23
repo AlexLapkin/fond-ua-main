@@ -1,15 +1,530 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
+    <!-- <meta http-equiv="X-UA-Compatible" content="IE=edge" /> -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Page title</title>
-    <link rel="stylesheet" href="./sass/index.scss" />
-    <script type="module" src="./index.js"></script>
+    <title>We are the future</title>
+    
+
   </head>
   <body>
-    <h1>Example title</h1>
-    <!-- ❗️❗️❗️ Add partials like so for every page -->
-    <include src="./partials/example.html"></include>
+    <header class="header">
+      <div class="container main-nav">
+        <nav class="nav">
+          <a class="logo head link" href="./index.html"
+            >WeAre<span class="header-word">TheFuture</span>
+          </a>
+
+          <ul class="nav-ul list">
+            <!-- <li class="item">
+              <a class="nav-link current-page-main link" href="#hero">Donate</a>
+            </li> -->
+            <li class="item"><a class="nav-link link" href="#whatarewedo">WHAT WE DO</a></li>
+            <li class="item"><a class="nav-link link" href="#aboutus">ABOUT US</a></li>
+            <li class="item"><a class="nav-link link" href="#partners">PARTNERS</a></li>
+            <li class="item"><a class="nav-link link" href="#report">REPORT</a></li>
+            <li class="item"><a class="nav-link link" href="#footer">CONTACTS</a></li>
+          </ul>
+        </nav>
+
+        <!--Кнопка доната во всех версиях, кроме мобильной-->
+        <!-- <button type="button" class="main-btn-donate list" data-modal-open>DONATE NOW</button> -->
+
+
+        <!--Кнопка доната во всех версиях, кроме мобильной-->
+        <form method="POST" action="https://www.liqpay.ua/api/3/checkout" 
+        accept-charset="utf-8">
+        <input type="hidden" name="data" value="eyAidmVyc2lvbiIgOiAzLCAicHVibGljX2tleSIgOiAieW91cl9wdWJsaWNfa2V5IiwgImFjdGlv
+        biIgOiAicGF5IiwgImFtb3VudCIgOiAxLCAiY3VycmVuY3kiIDogIlVTRCIsICJkZXNjcmlwdGlv
+        biIgOiAiZGVzY3JpcHRpb24gdGV4dCIsICJvcmRlcl9pZCIgOiAib3JkZXJfaWRfMSIgfQ=="/>
+        <input type="hidden" name="signature" value="QvJD5u9Fg55PCx/Hdz6lzWtYwcI="/>
+        <button type="submit"
+        class="main-btn-donate list"
+        alt="DONATE NOW">DONATE NOW</button>
+        </form>
+        <!--Кнопка доната во всех версиях, кроме мобильной-->
+
+        <!-- src="//static.liqpay.ua/buttons/payUk.png"  -->
+
+        <!-- <lp-provider lp-data="your_data" lp-signature="your_signature">
+          <lp-apple-pay mode="black"></lp-apple-pay>
+        </lp-provider> -->
+
+        <!--Кнопка открытия мобильного меню-->
+        <button type="button" class="mobile-menu-open-btn js-open-menu" aria-expanded="false">
+          <svg class="icon-mobile" width="32" height="22">
+            <use href="./images/icons.svg#icon-burger"></use>
+          </svg>
+        </button>
+
+        <!-- <address class="cont">
+          <ul class="cont-ul list">
+            <li class="item">
+              <a class="cont-link email link" href="mailto:info@devstudio.com"
+                >info@devstudio.com</a
+              >
+            </li>
+            <li class="item">
+              <a class="cont-link tel link" href="tel:+110001111111">+11 (000) 111-11-11</a>
+            </li>
+          </ul>
+        </address> -->
+      </div>
+
+      <!--Страница мобильного меню-->
+      <div class="mobile-menu js-menu-container">
+        <div class="mobile-menu-container">
+          <button class="mobile-menu-close-btn js-close-menu">
+            <svg class="icon-mobile-menu-close" >
+              <use href="./images/icons.svg#icon-close-mobile-menu"></use>
+            </svg>
+          </button>
+
+          <ul class="mobile-menu-nav list">
+            <!-- <li><a class="mobile-menu-link main" href="#hero">Donate</a></li> -->
+            <li><a class="mobile-menu-link next" href="#whatarewedo">WHAT WE DO</a></li>
+            <li><a class="mobile-menu-link next" href="#aboutus">ABOUT US</a></li>
+            <li><a class="mobile-menu-link next" href="#partners">PARTNERS</a></li>
+            <li><a class="mobile-menu-link next" href="#report">REPORT</a></li>
+            <li><a class="mobile-menu-link next" href="#contacts">CONTACTS</a></li>
+            
+          </ul>
+ 
+           <!--Кнопка доната мобильной версии-->
+           <form method="POST" action="https://www.liqpay.ua/api/3/checkout" 
+           accept-charset="utf-8"> 
+           <input type="hidden" name="data" value="eyAidmVyc2lvbiIgOiAzLCAicHVibGljX2tleSIgOiAieW91cl9wdWJsaWNfa2V5IiwgImFjdGlv
+           biIgOiAicGF5IiwgImFtb3VudCIgOiAxLCAiY3VycmVuY3kiIDogIlVTRCIsICJkZXNjcmlwdGlv
+           biIgOiAiZGVzY3JpcHRpb24gdGV4dCIsICJvcmRlcl9pZCIgOiAib3JkZXJfaWRfMSIgfQ=="/>
+           <input type="hidden" name="signature" value="QvJD5u9Fg55PCx/Hdz6lzWtYwcI="/>
+           <button type="submit"
+           class="main-btn-donate-mobile list"
+           alt="DONATE NOW">DONATE NOW</button>
+           </form>
+          <!--Кнопка доната мобильной версии-->
+
+          <!-- <button type="button" class="main-btn-donate-mobile list" data-modal-open>DONATE NOW</button> -->
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!--HERO-section1-->
+      <section class="hero" id="hero">
+        <div class="container">
+          <!-- <h1 class="hero-title">Effective Solutions for Your Business</h1> -->
+          <p class="section-text">
+            The Charity Fund <b>"We Are The Future"</b> is collecting donations to create a
+              center to overcome psycho blocks for kids under 7 y.o. in Kyiv. Our team of
+              experienced teachers and psychologists will help children feel better thanks
+              to special classes, art therapy, theater therapy, as well as individual classes
+               with the family. 
+          </p>
+
+          <!-- <button type="button" class="main-btn list" data-modal-open>DONATE</button> -->
+        </div>
+      </section>
+
+<!--What we do-->
+<section class="section-customers" id="whatarewedo">
+  <div class="container section-customers-content">
+    <h2 class="section-title logo-company">WHAT WE DO</h2>
+    <p><b>"We Are The Future"</b> fund was created to help families and Ukrainian children get through
+      the hard time of the war. Kyiv is a large city-shelter where a lot of families live from
+      the occupied territories & destroyed cities from the East and South of Ukraine. Nowadays
+      a  large number of children are suffering from war, rocket explosions and the sound of
+      sirens. We decided to help them as soon as possible directly in Kyiv. Currently, we have
+       a project to create a mental and physical care center for children under 7 y.o. from
+        scratch. We want to have a brighter & stable future for our young generation.
+
+    </p>
+    
+  </div>
+</section>
+
+<!--Our Team-section-->
+
+<section class="section-team" id="aboutus">
+  <div class="container section-team-content">
+    <h2 class="section-title logo-company">ABOUT US</h2>
+
+    <ul class="section-ul-team list">
+      <li class="section-team-card">
+        <img 
+          srcset="
+            ./images/studio/KZ.jpg,
+            ./images/studio/KZ.jpg
+          "
+          src="./images/studio/KZ.jpg"
+          alt="designer"
+          width="264"
+        />
+        <div class="name-job">
+          <h3 class="section-subtitle-team">Kostiantyn Zubov</h3>
+          <!-- <h4>Executive Officer</h4> -->
+          <!-- <p class="section-text">He has a big experience of evacuating
+            people from Ukraine to the European Union. He manages a team
+            of volunteers. They have  evacuated more than 22 000+ moms
+             & kids in 22 EU countries. </p> -->
+             <p>Fund's chief executive officer.
+              He has a big experience of evacuating people from Ukraine
+              to the European Union. He manages a team of volunteers.
+              They have  evacuated more than 22 000+ moms & kids in 22 EU countries.</p>
+
+          </div>
+      </li>
+
+      <li class="section-team-card">
+        <img
+          srcset="./images/studio/NT2.png, ./images/studio/NT2.png"
+          src="./images/studio/NT2.png"
+          alt="frontend"
+          width="264"
+        />
+
+        <div class="name-job">
+          <h3 class="section-subtitle-team">Nataliia Tiutiunnykova</h3>
+          <!-- <p class="section-text">Teacher-Psychologist</p> -->
+          <p>Teacher-psychologist & managing director
+             of kids center “Thank you”. She has started helping children since 2014,
+             from the beginning of the first stage of war. For now she has huge
+              experience of psychological work with kids & their parents. 
+          </p>
+
+          
+        </div>
+      </li>
+
+      <li class="section-team-card">
+        <img
+          srcset="
+            ./images/studio/VK.jpg,
+            ./images/studio/VK.jpg,
+          "
+          src="./images/studio/VK.jpg"
+          alt="marketing"
+          width="264"
+        />
+
+        <div class="name-job">
+          <h3 class="section-subtitle-team">Valeriia Kozlovska</h3>
+          <!-- <p class="section-text">Teacher-Choreographer</p>  -->
+          <p>Teacher-choreographer. She has worked with
+            children for the last 14 years. Her creativity, interesting exercises
+             & team working methods help kids to improve mental / physical health
+              & their communication with the surrounding.
+          </p>
+
+          
+        </div>
+      </li>
+
+      <li class="section-team-card">
+        <img
+          srcset="
+            ./images/studio/IS.jpg,
+            ./images/studio/IS.jpg,
+          "
+          src="./images/studio/IS.jpg"
+          alt="UI"
+          width="264"
+        />
+
+        <div class="name-job">
+          <h3 class="section-subtitle-team">Ivan Steckyi</h3>
+          <!-- <p class="section-text">Conductor</p> -->
+          <p>Talented young conductor of 
+            the Kyiv Opera. Teacher at the National Academy of Music.
+             Despite his young age, he has excellent experience and
+              methods in teaching children to play the guitar.
+          </p>
+
+          
+  </div>
+</section>
+
+
+      <!--Customers-section4-->
+      <section class="section-customers" id="partners">
+        <div class="container section-customers-content">
+          <h2 class="section-title logo-company">PARTNERS</h2>
+
+          <ul class="section-customers-ul list">
+            <li class="customer-link">
+              <a href="" class="customer-link-a">
+                <img src="./images/Ukrainians-of-Colorado-Logo.jpg"
+                alt="UI"
+                width="264"
+              />
+                <!-- <svg class="icon-customer" width="104" height="56">
+                  <use href="./images/Ukrainians-of-Colorado-Logo.jpg"></use>
+                </svg> -->
+                </a>
+              <h3 class="section-partners-subtitle">Ukrainians of Colorado</h3>
+            </li>
+
+            <!-- <li class="customer-link">
+              <a href="" class="customer-link-a">
+                <svg class="icon-customer" width="104" height="56">
+                  <use href="./images/icons.svg#icon-logo-customer-two"></use>
+                </svg>
+              </a>
+            </li> -->
+
+            <li class="customer-link">
+              <a href="" class="customer-link-a">
+                <img src="./images/Ukrainians-of-Colorado-Logo.jpg"
+                alt="UI"
+                width="264"
+              />
+                <!-- <svg class="icon-customer" width="104" height="56">
+                  <use href="./images/icons.svg#icon-logo-customer-three"></use>
+                </svg> -->
+              </a>
+              <h3 class="section-partners-subtitle">Ukrainians of Madrid</h3>
+            </li>
+
+            <!-- <li class="customer-link">
+              <a href="" class="customer-link-a">
+                <svg class="icon-customer" width="104" height="56">
+                  <use href="./images/icons.svg#icon-logo-customer-four"></use>
+                </svg>
+              </a>
+            </li> -->
+
+            <li class="customer-link">
+              <a href="" class="customer-link-a">
+                <img src="./images/VYG.jpg"
+                alt="UI"
+                width="264"
+              />
+                <!-- <svg class="icon-customer" width="104" height="56">
+                  <use href="./images/icons.svg#icon-logo-customer-five"></use>
+                </svg> -->
+              </a>
+              <h3 class="section-partners-subtitle">Вікторія Юрбізнес Груп</h3>
+            </li>
+
+            <li class="customer-link">
+              <a href="" class="customer-link-a">
+                <img src="./images/Paragraph Group.png"
+                alt="UI"
+                width="264"
+              />
+                <!-- <svg class="icon-customer" width="104" height="56">
+                  <use href="./images/icons.svg#icon-logo-customer-six"></use>
+                </svg> -->
+              </a>
+              <h3 class="section-partners-subtitle">Параграф Плюс</h3>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="section-customers" id="report">
+        <div class="container section-customers-content">
+          <h2 class="section-title logo-company">MEDIA About Us</h2>
+          <p>“Working with the Ukrainian charity, Konstantin Zubov liaises with foreign partners
+             like McEneaney, and has helped more than 22,000 people leave Ukraine.” - “Business Post”
+          </p>
+          
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer" id="footer">
+      <div class="container foot-content">
+        <div class="logo-sl-foot">
+          <div class="logo-text-footer">
+            <!-- <a href="./index.html" class="logo foot link"
+              >Web<span class="footer-word">Studio</span></a
+            > -->
+            <p class="footer-text">
+              Address: Kruhlouniversytetska 7, of.27, Kyiv, Ukraine
+              Charity Regulatory Authority Number: 44673964
+              Charity Fund "We Are The Future"
+              __@wearethefurue.com.ua
+              </p>
+          </div>
+          <div class="social-link-footer-container">
+            <p class="footer-text-title">Social media</p>
+
+            <ul class="section-social-ul-footer list">
+              <li class="social-link">
+                <a href="" class="social-link-a-foot">
+                  <svg class="icon-sl-foot" width="24" height="24">
+                    <use href="./images/icons.svg#icon-instagram-one"></use>
+                  </svg>
+                </a>
+              </li>
+
+              <!-- <li class="social-link">
+                <a href="" class="social-link-a-foot">
+                  <svg class="icon-sl-foot" width="24" height="24">
+                    <use href="./images/icons.svg#icon-twitter--two"></use>
+                  </svg>
+                </a>
+              </li> -->
+
+              <li class="social-link">
+                <a href="" class="social-link-a-foot">
+                  <svg class="icon-sl-foot" width="24" height="24">
+                    <use href="./images/icons.svg#icon-facebook-three"></use>
+                  </svg>
+                </a>
+              </li>
+
+              <!-- <li class="social-link">
+                <a href="" class="social-link-a-foot">
+                  <svg class="icon-sl-foot" width="24" height="24">
+                    <use href="./images/icons.svg#icon-linkedin-four"></use>
+                  </svg>
+                </a>
+              </li> -->
+            </ul>
+          </div>
+          
+        </div>
+        <div class="foot-add">
+          <p class="foot-add-text">The use of site materials, images and texts, as well as the automated copying
+            of site information by any programs without the written permission of fund "We
+             Are The Future" is prohibited.</p>
+          </div>
+
+        <!-- <div class="cont-subscribe">
+          <p class="text-form">Subscribe</p>
+          <form class="form-subscribe">
+            <label class="label-subscribe">
+              <input class="cont-subscribe-input" type="email" name="email" placeholder="E-mail" />
+            </label>
+
+            <button type="submit" class="form-btn">
+              Subscribe
+              <svg class="icon-subscribe-foot" width="24" height="24">
+                <use href="./images/icons.svg#icon-form"></use>
+              </svg>
+            </button>
+          </form>
+        </div> -->
+      </div>
+    </footer>
+
+    <!--Modal Window-->
+    <!-- <div class="backdrop is-hidden" data-modal>
+      <div class="modal-window">
+        <button type="button" class="modal-close-btn" data-modal-close>
+          <svg class="modal-close-btn-icon" width="8" height="8">
+            <use href="./images/icons.svg#icon-close"></use>
+          </svg>
+        </button>
+        <p class="modal-win-text">Leave your contacts and we will call you back</p>
+
+        <form>
+          <div class="modal-win-form">
+            <label class="modal-win-label" for="user-name">Name</label>
+
+            <div class="modal-win-form-cont">
+              <input
+                id="user-name"
+                type="text"
+                name="user-name"
+                class="modal-win-input"
+                required
+                pattern="^[a-zA-Zа-яА-ЯіІїЇєЄ']+"
+                minlength="3"
+              />
+              <svg class="icon-form" width="18" height="24">
+                <use href="./images/icons.svg#icon-person"></use>
+              </svg>
+            </div>
+          </div>
+
+          <div class="modal-win-form">
+            <label class="modal-win-label" for="user-phone">Phone</label>
+            <div class="modal-win-form-cont">
+              <input
+                id="user-phone"
+                type="tel"
+                name="user-phone"
+                class="modal-win-input"
+                required
+                pattern="[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}"
+                title="xxx-xxx-xx-xx"
+              />
+              <svg class="icon-form" width="18" height="24">
+                <use href="./images/icons.svg#icon-phone"></use>
+              </svg>
+            </div>
+          </div>
+
+          <div class="modal-win-form">
+            <label class="modal-win-label" for="user-email">Email</label>
+            <div class="modal-win-form-cont">
+              <input
+                id="user-email"
+                type="email"
+                name="user-email"
+                class="modal-win-input"
+                required
+              />
+              <svg class="icon-form" width="18" height="24">
+                <use href="./images/icons.svg#icon-email"></use>
+              </svg>
+            </div>
+          </div>
+
+          <div class="modal-win-form-textarea">
+            <label class="modal-win-label" for="user-comment">Comment</label>
+            <textarea
+              id="user-comment"
+              name="user-comment"
+              class="modal-win-textarea"
+              placeholder="Text input"
+            ></textarea>
+          </div>
+
+          <div class="modal-win-checkbox">
+            <input
+              id="user-privacy"
+              class="modal-win-checkbox visually-hidden"
+              type="checkbox"
+              name="user-privacy"
+              value="true"
+              required
+            />
+            <label for="user-privacy" class="modal-win-label-checkbox">
+              <span class="modal-win-span">
+                <svg class="icon-checkbox" width="10" height="8">
+                  <use class="icon-chechkbox-use" href="./images/icons.svg#icon-check"></use>
+                </svg>
+              </span>
+              <span class="modal-win-add-span"
+                >I accept the terms and conditions of the
+                <a class="modal-win-checkbox-link" href="">Privacy Policy</a>
+              </span>
+            </label>
+          </div>
+
+          <button type="submit" class="modal-btn">Send</button>
+        </form>
+      </div>
+    </div> -->
+
+    <script src="./js/modal.js"></script>
+
+    <script src="./js/mobile-menu.js"></script>
+   
+     <script src="./js/state-header.js"></script>
+
+   
+  <script>
+      const provider = document.querySelector('lp-provider');
+      provider.addEventListener('onpaymentsuccess', (customEvent) => { console.log(customEvent); }); // Колбек для обробки успішного платежу
+      provider.addEventListener('onpaymenterror', (customEvent) => { console.log(customEvent); }); // Колбек для обробки помилки
+  </script>
+     <!-- подключение скрипта оплаты -->
+
   </body>
 </html>

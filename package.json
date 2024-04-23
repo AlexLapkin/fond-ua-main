@@ -1,5 +1,5 @@
 {
-  "name": "parcel-project-template",
+  "name": "fond-ua-main",
   "version": "2.0.0",
   "description": "",
   "homepage": "https://alexlapkin.github.io/fond-ua-main",
@@ -12,7 +12,7 @@
     "url": "git+https://github.com/goitacademy/parcel-project-template.git"
   },
   "keywords": [],
-  "author": "Alexander Repeta <alexander.repeta@gmail.com>",
+  "author": "Alexander Lapkin",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/goitacademy/parcel-project-template/issues"

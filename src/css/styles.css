@@ -1,0 +1,1692 @@
+@import '~node_modules/modern-normalize/modern-normalize.css';
+
+
+body {
+    color: var(--main-text-color); /*--основной цвет текста--*/
+    background-color: var(--main-background-color);
+    font-family: 'Roboto', sans-serif;
+    }
+
+/*--Сброс дефолтных настроек--*/
+
+/*--Сброс настроек списков списков ul, ol--*/
+.list
+{list-style: none;}
+
+ul, ol
+{margin-top: 0;
+ margin-bottom: 0;
+ padding-left: 0;   
+}    
+
+/*--Сброс настроек ссылок a--*/
+.link
+{text-decoration: none;}
+
+/*--Сброс настроек заголовков h и текста p--*/
+h1, h2, h3, p
+{margin-top: 0;
+ margin-bottom: 0;}
+
+/*--Сбрасываем нижний отступ в изображениях, делая их блоковыми--*/
+img 
+{display: block;
+max-width: 100%;
+height: auto;}
+
+/*--Задание палитры цветов через переменные--*/
+:root
+{
+--main-text-color: #434455;
+--main-background-color:#FFFFFF;
+--logo-check-color:yellow;
+--header-word-color:blue;
+--nav-link-color:#2E2F42;
+--link-active-color:#404BBF;
+--hero-background-color:#2E2F42;
+--hero-title-color:#FFFFFF;
+--main-btn-color:#FFFFFF;
+--btn-color: #4D5AE5;
+--border-btn-color: #e7e9fc;
+--section-main-text-color: #2E2F42;
+--section-team-background-color:#F4F4FD;
+--footer-background-color:#2E2F42;
+--footer-main-text-color:#F4F4FD;
+--footer-secondary-text-color: #fff;
+--icon-fill-color: #f4f4fd;
+}
+
+
+/*----------------------HEADER-----------------------*/
+
+/*-----------------МОБИЛЬНАЯ ВЕРСИЯ-------------------*/
+
+
+/*--Описываем подчеркивание header--*/
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 999; 
+  /* background-color: #333;
+  color: #fff; */
+  padding: 10px;
+  text-align: center;
+  background-color: rgba(255, 255, 255, 1);
+  border-bottom: 1px solid #E7E9FC;
+  box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
+}
+
+
+/*--Контейнер, в который помещается контент секций--*/
+.container {
+  max-width: 428px;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+/*--Скрываем ненужные меню для мобайла--*/
+.nav-ul, .cont 
+{ display: none; }  
+
+
+/*--Данные верхнего логотипа--*/
+.logo {
+    color: var(--logo-check-color);
+    font-family: 'Raleway', sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 1.17;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+
+/*--Дополнительные данные верхнего логотипа--*/
+.head {
+  padding: 24px 0;
+  }
+
+/*--Задаем отступ между логотипом и nav-ul--*/
+
+/*--Описываем слово Studio--*/
+.header-word {
+    color: var(--header-word-color);
+    font-family: 'Raleway' sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 1.17;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+}
+
+/*--Ставим элементы навигации в строку--*/
+.main-nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    }
+
+
+/*--Кнопка открытия мобильного меню - бургер--*/
+.mobile-menu-open-btn
+{ border: none;
+  background-color: transparent;
+  padding: 0;
+  line-height: 0;
+  padding-top: 24px;
+  padding-bottom: 24px;
+}
+
+/*--Мобильное меню--*/
+.mobile-menu
+{
+ position: fixed;
+ width: 100%;
+ height: 100%;
+ z-index: 1000;
+ top: 0;
+ right: 0;
+ width: 200px;
+ height: 520px;
+ opacity: 0;
+ visibility: hidden;
+ pointer-events: none;
+ background-color: #696c92;
+ transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+            visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+transform: translateX(100%);
+
+/* border-radius: 15px; */
+}
+
+
+/*--Открытие мобильного меню--*/
+.mobile-menu.is-open
+{ opacity: 0.95;
+  visibility: visible;
+  pointer-events: auto; 
+
+  transform: translateX(0);
+}
+
+/*--Контейнер мобильного меню--*/
+.mobile-menu-container
+{
+ display: flex;
+ height: 100%;
+ flex-direction: column;
+ justify-content: space-between;
+ position: relative;
+ padding-top: 80px;
+ padding-left: 25px;
+ padding-bottom: 40px;
+ padding-right: 25px;
+ }
+
+
+/*--Кнопка закрытия мобилього меню--*/
+.mobile-menu-close-btn
+{position: absolute;
+ top: 24px;
+ right: 23px;
+ display: flex;
+ align-items: center;
+ justify-content: center; 
+ width: 24px; 
+ height: 24px; 
+ border: 1px solid #D9D9D9;
+ border-radius:50%;
+ background-color: #ffff; 
+ padding: 0;
+}
+
+
+/*--Описываем иконку закрытия мобильного меню--*/
+.icon-mobile-menu-close 
+ { 
+  stroke: #696c92;
+  /* background-color: #696c92; */
+  width: 16px;
+  height: 16px;
+ }
+
+
+/*--Мобильное меню навигации--*/
+.mobile-menu-nav
+{display: flex;
+ flex-direction: column;  
+ padding: 0;
+ gap: 40px;
+ }
+
+
+/*--Описываем линки навигации мобильного меню--*/
+.mobile-menu-link
+{font-weight: 500;
+ font-size: 16px;
+ line-height: 1.11;
+ letter-spacing: 0.02em;
+ text-decoration: none;
+ }
+
+
+/*--Задаем цвет главной ссылке мобильного меню--*/
+ .main {
+   /* color: #404bbf; */
+   color: #FFFFFF;  
+ }
+
+
+/*--Задаем цвет другим ссылкам мобильного меню--*/
+.next
+ { color: #FFFFFF;  
+}
+
+
+ /*--Описываем поведение ссылок при фокусе--*/
+ .mobile-menu-link:focus
+ { color: #404bbf; }
+
+
+/*----*/ 
+.mobile-cont-sl
+{ display: flex;
+  flex-direction: column; }
+
+
+/*--Мобильное меню контакты--*/
+.mobile-menu-cont
+{display: flex;
+ flex-direction: column;   
+ gap: 40px; }
+
+
+ /*--Задаем цвет ссылке телефона--*/
+.tel-number
+{ color: #4D5AE5; }
+
+
+/*--Параметры текста email--*/
+.mobile-menu-email
+{font-weight: 500;
+ font-size: 20px;
+ line-height: 1.2;
+ letter-spacing: 0.02em;
+ color: #434455;
+ text-decoration: none;
+}
+
+
+/*--Список соцсетей мобильного меню--*/
+.mobile-menu-social
+{display: flex;
+ margin-top: 48px;
+ max-width: 328px;
+ justify-content: space-between;
+ }
+
+
+/*--Ячейка каждой иконки линка соцсети--*/
+.social-link
+{width: 40px;
+height: 40px;}
+
+
+/*--Описание класса ссылки соцсетей мобильного меню--*/
+.social-link-a-mobile {
+     display: flex;
+     width: 100%;
+     height: 100%;
+     background-color: #4D5AE5;
+     border-radius: 50%;
+     align-items: center;
+     justify-content: center;
+     color: #FFFFFF;
+     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+
+ /*--Меняем цвет при наведении на ссылку соцсети--*/
+.social-link-a-mobile:hover,
+ .social-link-a-mobile:focus {
+     background-color: #404bbf;
+    }
+
+ /*--Класс для заливки иконок соцсетей футера--*/
+.icon-sl-mobile 
+{ fill: #f4f4fd; }
+
+
+ /*---Кнопка Donate---*/
+.main-btn-donate {
+  color: var(--main-btn-color);
+  background-color: #4D5AE5;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  border: none;
+  display: block;
+  cursor: pointer;
+  width: 1px;
+  /* min-width: 169px; */
+  height: 56px;
+  margin-left: auto;
+  /* margin-right: auto; */
+  /* margin-top: 72px; */
+  padding: 16px 20px 16px 20px;
+  border-radius: 4px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  visibility: hidden; 
+}
+
+ /*---Кнопка Donate---*/
+ .main-btn-donate-mobile {
+  color: var(--main-btn-color);
+  background-color: #4D5AE5;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  border: none;
+  display: block;
+  cursor: pointer;
+  max-width: 169px;
+
+  /* min-width: 169px; */
+  height: 56px;
+  margin-left: auto;
+  /* margin-right: auto; */
+  /* margin-top: 72px; */
+  padding: 16px 20px 16px 20px;
+  border-radius: 4px;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  /* visibility: hidden;  */
+}
+
+
+/*-----------ПЛАНШЕТНАЯ ВЕРСИЯ-----------*/
+
+@media screen and (min-width:768px)
+{
+
+/*--Задаем ширину контейнера--*/
+.container
+{max-width: 768px;}
+
+
+/*--Скрываем кнопку вызова мобильного меню--*/    
+.mobile-menu-open-btn
+{display: none;}
+
+
+/*--Задаем отступ между логотипом и nav-ul--*/
+.head 
+{ margin-right: 60px; }
+
+
+/*--Включаем меню навигации - делаем видимым--*/
+.nav 
+{display: flex;
+align-items: center; }
+
+
+/*--Включаем главную навигацию--*/
+.main-nav 
+{ display: flex; } /*--Выстраиваем элементы по горизонтали--*/
+
+
+/*--Делаем список навигации flex-контейнером--*/
+.nav-ul 
+{display: flex;
+align-items: center;
+/* gap: 20px; */
+
+flex-direction: row;
+/* align-items: center; */
+flex-wrap: wrap;
+column-gap: 24px;
+row-gap: 10px;   }
+
+
+/*--Считаем ширину карточки сотрудника--*/
+/* .section-team-card {
+flex-basis: calc((100% - 1*24px)/2);} */
+
+
+/* }      */
+    
+
+/*--Прижимаем секцию почты и телефона к правому краю--*/
+.cont
+{display: flex;
+ font-style: normal; /*--сбрасываем стиль italic--*/
+margin-left: auto; }
+
+
+/*--Делаем список контактов flex-контейнером--*/
+.cont-ul {
+display: flex;
+flex-direction: column;
+gap: 12px;}
+
+
+/*--Данные навигационных ссылок--*/
+.nav-link {
+color: var(--nav-link-color);
+font-weight: 500;
+font-size: 16px;
+line-height: 1.5;
+letter-spacing: 0.02em;
+display: block;
+/* padding-top: 24px;
+padding-bottom: 24px; */
+transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+/*--Меняем цвет ссылок при наведении--*/
+.nav-link:hover,
+.nav-link:focus
+{color: var(--link-active-color); }
+
+
+/*--Задаем ссылке страницы Studio - relative--*/
+.current-page-main
+{position: relative;
+color: var(--link-active-color);}
+
+
+/*--Делаем подчеркивание текущей страницы при помощи псевдоэлемента after--*/
+/* .current-page-main::after
+{content: '';
+ width: 48px;
+ height: 4px;
+ left: 0;
+ bottom: -1px;
+ border-radius: 2px;
+ background-color: #404BBF;
+ margin: auto;
+ position: absolute;
+ } */
+
+
+/*--Данные ссылок контактов--*/
+.cont-link {
+color: var(--main-text-color);
+font-weight: 400;
+font-size: 12px;
+line-height: 1.17;
+letter-spacing: 0.04em;
+text-decoration: none;
+display: block;
+transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+/*--Дополнительный класс для почты--*/
+.email
+{padding-top: 16px;}
+
+
+/*--Дополнительный класс для телефона--*/
+.tel
+{padding-bottom: 16px}
+
+
+/*--Меняем цвет ссылок при наведении--*/
+.cont-link:hover,
+.cont-link:focus {
+color: var(--link-active-color);
+}
+
+.main-btn-donate {
+  visibility: visible;
+  min-width: 169px; 
+}
+
+}
+
+/*-----------------Описываем ДЕСКТОП---------------------*/
+
+@media screen and (min-width:1158px) {
+
+.container
+{max-width: 1158px;
+ padding-left: 15px;
+ padding-right: 15px;}
+
+
+/*--Задаем отступ между логотипом и nav-ul--*/
+.head
+{margin-right: 100px;} /*--Задаем отступ между логотипом и nav-ul--*/
+
+
+/*--Делаем список навигации flex-контейнером--*/
+.nav-ul {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    }
+
+
+/*--Прижимаем секцию почты и телефона к правому краю--*/
+.cont
+{ margin-left: auto;}
+
+
+/*--Делаем список контактов flex-контейнером--*/
+.cont-ul 
+{ flex-direction: row;
+  gap:40px; }
+
+
+/*--Убираем паддинги--*/
+.tel
+{padding-bottom: 0;}
+
+.email 
+{ padding-top: 0; }
+
+/*--Данные ссылок контактов--*/
+.cont-link {
+font-size: 16px;
+line-height: 1.5;
+letter-spacing: 0.02em;
+display: block;
+padding: 24px 0;
+}
+
+/*--Данные навигационных ссылок--*/
+.nav-link {
+  padding-top: 24px;
+  padding-bottom: 24px;
+  font-size: 18px;
+    }
+
+}
+   
+/*----------------------HERO--------------------------*/
+
+/*-------------МОБИЛЬНАЯ ВЕРСИЯ------------------*/
+
+
+/*--Задаем параметры секции hero--*/
+.hero {
+/* background-color: var(--hero-background-color); */
+margin-top: 0;
+max-width: 428px;
+/* padding: 120px 0; */
+padding-top: 120px;
+padding-bottom: 60px;
+padding-left: 0;
+padding-right: 0;
+margin-left: auto;
+margin-right: auto;
+/* background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)), 
+url(../images/hero/Hero_mobile_1x.jpg); */
+/* background-size: cover;
+background-repeat: no-repeat;
+background-position: center; */
+border-bottom: 2px solid yellow;
+position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  width: 100%;
+  height: 2px;
+  background-color: blue;
+}
+
+/*--Описываем медиаправило для фонового изображения HERO-mobile--*/
+@media screen and (min-device-pixel-ratio:2) and (max-width:767px),
+screen and (min-resolution: 192dpi) and (max-width: 767px),
+screen and (min-resolution: 2ppx) and (max-width: 767px)
+{
+.hero
+ {
+  /* background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+    url(../images/hero/Hero_mobile_2x.jpg) */
+   }
+}
+
+
+
+/*--Задаем параметры заголовка секции hero--*/
+.hero-title {
+color: var(--hero-title-color);
+font-weight: 700;
+font-size: 36px;
+line-height: 1.11;
+text-align: center;
+letter-spacing: 0.02em;
+max-width: 320px;
+margin-left: auto;
+margin-right: auto;}
+
+
+/*---Кнопка Order Service---*/
+.main-btn {
+color: var(--main-btn-color);
+background-color: #4D5AE5;
+font-family: 'Roboto', sans-serif;
+font-weight: 500;
+font-size: 16px;
+line-height: 1.5;
+letter-spacing: 0.04em;
+border: none;
+display: block;
+cursor: pointer;
+min-width: 169px;
+height: 56px;
+margin-left: auto;
+margin-right: auto;
+margin-top: 72px;
+padding: 16px 32px 16px 32px;
+border-radius: 4px;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+/*--Меняем цвет кнопок при навeдении--*/
+.main-btn:hover,
+.main-btn:focus {
+color: var(--main-btn-color);
+background-color: #404BBF;
+cursor: pointer;
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+}
+
+
+
+/*----------------ПЛАНШЕТНАЯ ВЕРСИЯ------------*/
+
+/*----Пишем правило для планшетов--*/
+@media screen and (min-width:768px)
+{
+
+/*--Задаем параметры секции hero--*/
+.hero {
+/* background-color: var(--hero-background-color); */
+margin-top: 0;
+max-width: 768px;
+/* padding: 140px 0; */
+padding-top: 140px;
+padding-bottom: 70px;
+padding-left: 0;
+padding-right: 0;
+margin-left: auto;
+margin-right: auto;
+/* background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+            url(../images/hero/Hero_tablet_1x.jpg); */
+/* background-size: cover;
+background-repeat: no-repeat;
+background-position: center; */
+}
+
+
+/*--Описываем медиаправило для фонового изображения HERO-tablet--*/
+@media screen and (min-device-pixel-ratio:2) and (min-width:768px),
+screen and (min-resolution: 192dpi) and (min-width: 768px),
+screen and (min-resolution: 2ppx) and (min-width: 768px) {
+.hero {
+/* background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+            url(../images/hero/Hero_tablet_2x.jpg) */
+}
+}
+
+.hero-content {
+  display: flex;
+  
+}
+
+/*--Задаем параметры заголовка секции hero--*/
+.hero-title {
+color: var(--hero-title-color);
+font-weight: 700;
+font-size: 56px;
+line-height: 1.07;
+text-align: center;
+letter-spacing: 0.02em;
+max-width: 496px;
+margin-left: auto;
+margin-right: auto;
+}
+    
+
+/*--Задаем верхний отступ от кнопки--*/
+.main-btn 
+{ margin-top: 36px; }
+
+}
+
+/*---------------------ДЕСКТОПНАЯ ВЕРСИЯ---------------------*/
+
+/*--Пишем правило для десктопов--*/
+@media screen and (min-width:1158px)
+{
+ 
+/*--Задаем параметры секции hero--*/
+.hero {
+/* background-color: var(--hero-background-color); */
+margin-top: 0;
+max-width: 1440px;
+/* padding: 160px 0; */
+padding-top: 160px;
+padding-bottom: 80px;
+padding-left: 0;
+padding-right: 0;
+margin-left: auto;
+margin-right: auto;
+/* background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+            url(../images/hero/Hero_desktop_1x.jpg); */
+/* background-size: cover;
+background-repeat: no-repeat;
+background-position: center; */
+}
+
+
+/*--Описываем медиаправило для фонового изображения HERO-desktop--*/
+@media screen and (min-device-pixel-ratio:2) and (min-width:1158px),
+screen and (min-resolution: 192dpi) and (min-width: 1158px),
+screen and (min-resolution: 2ppx) and (min-width: 1158px) {
+.hero {
+/* background-image: linear-gradient(rgba(46, 47, 66, 0.7), rgba(46, 47, 66, 0.7)),
+              url(../images/hero/Hero_desktop_2x.jpg); */
+      }
+}
+
+/*--Задаем верхний отступ от кнопки--*/
+.main-btn {
+ margin-top: 48px;
+}
+}
+
+/*------------------СЕКЦИЯ OUR TEAM----------------*/
+
+/*------------МОБИЛЬНАЯ ВЕРСИЯ-------------*/
+
+
+/*--Данные секции Our Team, у которой отличается фон--*/
+.section-team
+{
+/* background-color: var(--section-team-background-color); */
+padding-top: 100px;
+padding-bottom: 60px;
+padding-left: 0;
+padding-right: 0;
+position: relative;
+border-bottom: 2px solid yellow;
+}
+
+.section-team::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  width: 100%;
+  height: 2px;
+  background-color: blue;
+  }
+
+.section-title {
+text-align: center;  
+}
+
+/*--Задаем внутренние отступы и располагаем вертикально--*/
+.section-ul-team
+{
+ display: flex;
+ flex-direction: column;
+ row-gap: 40px;
+ align-items: center;
+ }
+
+ /*---Описание карточки сотрудника-*/
+.section-team-card {
+background-color: var(--main-background-color);
+text-align: center;
+flex-basis: calc((100%)/1);
+width: 264px;
+height: 500px;
+border-radius: 0px 0px 4px 4px;
+box-shadow: 0px 1px 6px rgba(46, 47, 66, 0.08),
+  0px 1px 1px rgba(46, 47, 66, 0.16), 0px 2px 1px rgba(46, 47, 66, 0.08);
+}
+
+
+/*--Создание контейнера - имя, должность членов команды--*/
+.name-job
+{ padding: 32px 10px; } /*--внутренние отступы контейнера--*/
+
+
+/*--Данные подзаголовков членов команды--*/
+.section-subtitle-team {
+font-weight: 500;
+font-size: 20px;
+line-height: 1.2;
+letter-spacing: 0.02em;
+text-align: center;
+margin-bottom: 8px;
+}
+
+
+/*--Задание параметров должности сотрудника--*/
+.name-job .section-text 
+{
+ font-weight: 400;
+ text-align: center;
+ margin-bottom: 8px;
+}
+
+
+/*--Контейнер 4-х ячеек с иконками соцсетей--*/
+.section-social-ul
+{display: flex;
+gap: 24px;
+justify-content: center;}
+
+/*--Ячейка каждой иконки линка соцсети--*/
+.social-link
+{width: 40px;
+height: 40px;}
+
+
+/*--Описание класса ссылки соцсетей--*/
+.social-link-a
+{
+display: flex;
+width: 100%;
+height: 100%;
+background-color: #4D5AE5;
+border-radius: 50%;
+align-items: center;
+justify-content: center;
+color: #FFFFFF;
+transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+/*--Класс для заливки иконок соцсетей--*/
+.icon-sl {
+    fill: var(--icon-fill-color);
+}
+
+/*--Меняем цвет при наведении --*/
+.social-link-a:hover,
+.social-link-a:focus {
+background-color: #404bbf;
+}
+
+
+/*----------ПЛАНШЕТНАЯ ВЕРСИЯ-------------*/
+
+@media screen and (min-width: 768px)
+
+{
+
+/*--Задаем внутренние паддинги--*/    
+.section-team-content 
+{ width: 584px; }
+
+
+/*--Задаем внутренние отступы и располагаем вертикально--*/
+.section-ul-team {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    column-gap: 24px;
+    row-gap: 50px;   }
+
+
+/*--Считаем ширину карточки сотрудника--*/
+.section-team-card {
+flex-basis: calc((100% - 1*24px)/2);}
+
+.section-team {
+padding-top: 100px;
+padding-bottom: 70px;
+padding-left: 0;
+padding-right: 0;
+}
+
+}
+
+/*---------------ДЕСКТОПНАЯ ВЕРСИЯ------------------*/
+
+
+@media screen and (min-width: 1158px)
+{
+   
+/*--Данные секции Our Team, у которой отличается фон--*/
+.section-team
+{ padding-top: 100px;
+  padding-bottom: 80px;
+  padding-left: 0;
+  padding-right: 0;} /*--Задаем внутренние паддинги--*/
+
+
+/*--Задаем паддинги--*/
+.section-team-content
+{ width: 1158px; }
+
+
+.section-team-card {
+    flex-basis: calc((100% - 3*24px)/4);
+  }
+
+}
+
+/*-------------------СЕКЦИЯ CUSTOMERS-----------------*/
+
+/*---------------МОБИЛЬНАЯ ВЕРСИЯ---------------*/
+
+
+/*--Задаем внутренние паддинги секции заказчиков--*/
+.section-customers
+{padding-top: 100px;
+  padding-bottom: 60px;
+  padding-left: 0;
+  padding-right: 0;
+  border-bottom: 2px solid yellow;
+  position: relative;
+}
+
+.section-customers::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  width: 100%;
+  height: 2px;
+  background-color: blue;
+  }
+
+/*--Описание контейнера логотипов заказчиков--*/
+.logo-company
+{margin-bottom:50px;}
+
+
+/*--Описываем контейнер--*/
+.section-customers-ul {
+display: flex;
+flex-direction: row;
+align-items: center;
+flex-wrap: wrap;
+column-gap: 16px;
+row-gap: 50px;
+}
+
+
+/*--Описываем ссылку на иконку Заказчика--*/
+.customer-link
+{
+ width: calc((100% - 16px)/2);
+ max-width: 190px; 
+ height: 88px;
+ background-color: #FFFFFF;
+ /* border: 1px solid #8E8F99; */
+}
+
+
+/*--Описываем ссылку логотипа компаний--*/
+.customer-link-a
+{
+width: 100%;
+height: 100%;
+border: 1px solid #8E8F99;
+border-radius: 4px;
+display: flex;
+align-items: center;
+justify-content: center;
+color: #8e8f99;
+transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1), 
+color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+/*--Меняем цвет рамки при наведении--*/
+.customer-link-a:hover,
+.customer-link-a:focus
+{ border-color: #404bbf; }
+
+
+/*--Меняем цвет иконки при наведении на ссылку--*/
+.customer-link-a:hover>.icon-customer,
+.customer-link-a:focus>.icon-customer 
+{ fill: #404bbf; }
+
+
+/*--Класс для заливки иконок логотипов компаний--*/
+.icon-customer {
+fill: #8E8F99;
+}
+
+.section-partners-subtitle {
+  margin-top: 5px;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+
+/*----------------ПЛАНШЕТНАЯ ВЕРСИЯ------------------*/
+
+@media screen and (min-width: 768px) 
+{
+     
+  .section-customers {
+    padding-top: 100px;
+    padding-bottom: 70px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+/*--Задаем паддинги--*/
+.section-customers-content {
+  width: 584px;
+}
+
+/*--Описываем секцию--*/
+.section-customers-ul {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    column-gap: 36px;
+    row-gap: 50px;
+}
+
+
+/*--Описываем ссылку на иконку Заказчика--*/
+.customer-link
+{
+ width: calc((100% - 16px)/2);
+ width: 168px; 
+ height: 88px;
+ background-color: #FFFFFF;}
+
+}
+
+/*------------ДЕСКТОПНАЯ ВЕРСИЯ СЕКЦИИ CUSTOMERS-------------*/
+
+@media screen and (min-width: 1158px)
+{
+    
+
+/*--Задаем внутренние паддинги секции закачиков--*/
+.section-customers
+{padding-top: 100px;
+  padding-bottom: 80px;
+  padding-left: 0;
+  padding-right: 0;}
+
+
+/*--Задаем паддинги--*/
+.section-customers-content {
+  width: 1158px;
+}
+
+
+/*--Описываем ссылку на иконку Заказчика--*/
+.customer-link
+{
+ width: calc((100% - 5824px)/6);
+ width: 168px; 
+ height: 88px;
+ background-color: #FFFFFF;}
+
+}
+
+/*-------------FOOTER---------------*/
+
+/*---------МОБИЛЬНАЯ ВЕРСИЯ---------*/
+
+
+/*--Данные Футера--*/
+.footer {
+background-color: var(--footer-background-color);
+padding: 60px 0;
+margin-left: auto;
+margin-right: auto;
+}
+
+
+/*--Ставим по горизонтали левый и правый блок футера--*/
+.foot-content
+{display: flex;
+ flex-direction: column;   
+ align-items: center;
+ }
+
+
+/*--Дополнительный контейнер для планшетной версии--*/
+.logo-sl-foot
+{ 
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+
+/*--Контейнер логотип + текст--*/
+.logo-text-footer
+{
+display: flex;
+flex-direction: column;
+align-items: center;
+margin-bottom: 72px;
+}
+
+
+/*--Дополнительные данные нижнего логотипа--*/
+.foot 
+{ 
+display: inline-block;
+margin-bottom: 16px;
+}
+
+/*--Описываем слово-ссылку WEB--*/
+.footer-word
+{color: var(--footer-main-text-color);
+font-family: 'Raleway';
+font-weight: 800;
+font-size: 18px;
+line-height: 1.17;
+letter-spacing: 0.03em;
+text-transform: uppercase;
+}
+
+/*--Описываем текст футера--*/
+.footer-text {
+color: var(--footer-main-text-color);
+font-weight: 400;
+font-size: 14px;
+line-height: 1.5;
+letter-spacing: 0.02em;
+width: 350px;
+padding-left: 5px;
+}
+
+/*--Задание отступов контейнеру соцсетей футера--*/
+.social-link-footer-container
+{padding: 0;}
+
+
+/*--Текст Social media в футере--*/
+.footer-text-title
+{color: var(--footer-secondary-text-color);
+font-weight: 500;
+font-size: 16px;
+line-height: 1.5;
+letter-spacing: 0.02em;
+margin-bottom: 16px;
+text-align: center;
+}
+
+
+/*--Контейнер 4-х ячеек с иконками соцсетей--*/
+.section-social-ul-footer 
+{display: flex;
+ gap: 16px; }
+
+
+ /*--Описание класса ссылки соцсетей футера--*/
+.social-link-a-foot {
+     display: flex;
+     width: 100%;
+     height: 100%;
+     background-color: #4D5AE5;
+     border-radius: 50%;
+     align-items: center;
+     justify-content: center;
+     color: #FFFFFF;
+     transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+
+/*--Меняем цвет при наведении на ссылку футера--*/
+.social-link-a-foot:hover,
+.social-link-a-foot:focus 
+{ background-color: #31D0AA; }
+
+
+ /*--Класс для заливки иконок соцсетей футера--*/
+.icon-sl-foot {
+  fill: #f4f4fd; }
+
+.foot-add {
+  display: flex;
+  margin-top: 70px;
+}
+
+/*--Описываем текст футера--*/
+.foot-add-text {
+  color: var(--footer-main-text-color);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  max-width: 800px;
+    }
+
+
+/*------------ПЛАНШЕТНАЯ ВЕРСИЯ ФУТЕРА-----------*/
+
+@media screen and (min-width: 768px)
+
+{
+
+/*--Данные Футера--*/
+.footer {
+padding: 80px 0;
+}
+
+
+/*--Описываем планшетную версию--*/
+.foot-content
+{ width: 584px;
+  align-items: flex-start;
+}
+
+
+/*--Описываем дополнительный класс logo+SL--*/
+.logo-sl-foot
+{
+ flex-direction: row;
+ align-items: baseline;
+ }
+
+
+/*--Контейнер логотип + текст-обнуляем нижний отступ от мобайл-*/
+.logo-text-footer
+{margin-bottom: 0;
+ margin-right: 24px;
+ align-items: flex-start;
+}
+
+
+/*--Текст Social media в футере--*/
+.footer-text-title
+{text-align: start;
+}
+
+/*--Описываем текст футера--*/
+.footer-text {
+  color: var(--footer-main-text-color);
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  width: 400px;
+  }
+
+/*--Описание текста над формой--*/
+.text-form
+{ text-align: start;}
+
+
+/*--Описание контейнера для формы Subscribe--*/
+.form-subscribe 
+{ display: flex;
+flex-direction: row;
+align-items: baseline; }
+
+
+/*--Описание <label>, в которую вложен "p + input"--*/
+.label-subscribe 
+{ margin-right: 24px; }
+
+
+/*--Описание <input> внутри формы--*/
+.cont-subscribe input
+{ width: 264px;  }
+
+}
+
+/*---------------ДЕСКТОПНАЯ-ВЕРСИЯ-ФУТЕРА--------------*/
+
+@media screen and (min-width: 1158px) {
+  
+
+/*--Указываем отступы для десктопа--*/
+.footer {
+padding: 100px 0;
+}
+
+/*--Ставим по горизонтали левый и правый блок футера--*/
+.foot-content
+{display: flex;
+ /* flex-direction: row; */
+ width: 1158px;
+ padding-left: 100px; 
+align-items: baseline;
+}
+
+
+/*--Контейнер логотип + текст--*/
+.logo-text-footer
+{margin-right: 150px;}
+
+ .foot-add {
+  display: block;
+ }
+
+}
+
+
+/*--------------------BACK-DROP-----------------------*/
+
+/*----------МОБИЛЬНАЯ ВЕРСИЯ----------*/
+
+.backdrop
+{
+ position: fixed;
+ z-index: 100;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+ background-color: rgba(46, 47, 66, 0.4);
+ transition: opacity 250ms cubic-bezier(0.4, 0, 0.2, 1),
+ visibility 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/*--Дополнительный класс бекдропа--*/
+.backdrop.is-hidden
+{visibility: hidden;
+ opacity: 0;
+ pointer-events: none;
+}
+
+
+/*--Меняем размеры модального окна при вьюпорте 
+    меньше 428рх для нормального отображения--*/
+@media screen and (max-width: 427px) {
+  .modal-window {
+    width: 310px;
+    height: 615px;
+  }
+}
+
+
+/*--Меняем размеры модального окна при вьюпорте 
+    больше 428рх для нормального отображения--*/
+@media screen and (min-width: 428px) {
+.modal-window {
+    width: 392px;
+    height: 590px;}}
+
+
+/*--Описание модального окна--*/
+.modal-window
+{
+ background-color: #FCFCFC;
+ position: absolute;
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%);
+ box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.14),
+        0px 1px 3px rgba(0, 0, 0, 0.12),
+        0px 2px 1px rgba(0, 0, 0, 0.2);
+ border-radius: 4px;       
+ transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
+ padding-left: 16px;
+ padding-right: 16px;
+ padding-top: 72px;
+ padding-bottom:24px;
+ }
+
+
+/*--Описание кнопки закрытия модального окна--*/
+.modal-close-btn
+{
+position: absolute;
+top: 24px;
+right: 24px;
+display: flex;
+align-items: center;
+justify-content: center;    
+background-color: #E7E9FC;
+padding: 0;
+width: 24px;
+height: 24px;
+border-radius: 50%;
+border: 1px solid rgba(0, 0, 0, 0.1);
+cursor: pointer;
+transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+            border 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+
+/*--Поведение кнопки закрытия модального окна при ховере, фокусе--*/
+.modal-close-btn:hover,
+.modal-close-btn:focus
+{background-color: #404BBF;
+ border: none;
+}
+
+
+/*-Описание иконки закрытия модального окна-*/
+.modal-close-btn-icon
+{fill: #2E2F42;
+transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);}
+
+
+/*--Меняем цвет иконки при ховере/фокусе модальной кнопки закрытия--*/
+.modal-close-btn:hover .modal-close-btn-icon,
+.modal-close-btn:focus .modal-close-btn-icon
+{fill: #fff;}
+
+
+/*--Надпись над формами--*/
+.modal-win-text {
+    margin-bottom: 16px;
+    text-align: center;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.5;
+    letter-spacing: 0.02em;
+    color: #2E2F42;
+}
+
+/*--Описание формы модального окна--*/
+.modal-win-form 
+{margin-bottom: 8px;}
+
+
+/*--Описание <label> модального окна--*/
+.modal-win-label
+{ margin-bottom: 8px;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: #8E8F99;
+  display: block;
+  margin-bottom: 4px;
+}
+
+/*--Описание контейнера для input+svg--*/
+.modal-win-form-cont {
+    display: block;
+    position: relative;
+}
+
+/*--Описание <input>--*/
+.modal-win-input
+{
+width: 100%;
+height: 40px;
+padding-left: 38px;
+border: 1px solid rgba(46, 47, 66, 0.2);
+border-radius:4px;
+background-color: transparent;
+outline: transparent;
+transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+color: #2E2F42;
+}
+
+/*--Меняем цвет рамки на <input>--*/
+.modal-win-input:focus 
+{border-color: #4D5AE5;}
+
+/*--Меняем заливку иконки при фокусе на <input>--*/
+.modal-win-input:focus + .icon-form 
+{fill: #4D5AE5;}
+
+/*--Описываем вложенные иконки в формы--*/
+.icon-form
+{
+position: absolute;
+left: 16px;
+fill: #2E2F42;
+transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
+top: 50%;
+transform: translateY(-50%);
+}
+
+/*--Описываем textarea--*/
+.modal-win-form-textarea
+{margin-bottom: 16px;}
+
+/*--Описание формы textarea Comment--*/
+.modal-win-textarea {
+display: block;
+width: 100%;
+height: 120px;
+resize: none;
+padding: 8px 16px;
+font-weight: 400;
+font-size: 12px;
+line-height: 1.17;
+letter-spacing: 0.04em;
+color: #2E2F42;
+border: 1px solid rgba(46, 47, 66, 0.2);
+border-radius: 4px;
+background-color: transparent;
+outline: transparent;
+transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/*--Меняем цвет рамки textarea при ховере и фокусе--*/
+.modal-win-textarea:focus 
+{ border: 1px solid rgba(77, 90, 229, 1);}
+
+/*--Задаем цвет placeholder textarea--*/
+.modal-win-textarea::placeholder 
+{ 
+ font-weight: 400;
+ font-size: 12px;
+ line-height: 1.17;
+ letter-spacing: 0.04em;  
+ color: #8E8F99; }
+
+
+ 
+/*--Задаем отступ вниз от checkbox до кнопки--*/
+.modal-win-checkbox
+{margin-bottom: 24px; }
+
+
+/*--Описание <label> checkbox--*/
+.modal-win-label-checkbox {
+  display: flex;
+  font-weight: 400;
+  line-height: 1.17;
+  letter-spacing: 0.04em;
+  color: #8E8F99;
+ }
+
+
+/*--Задаем условия для разной ширины--*/
+@media screen and (max-width: 427px)
+{
+  /*--Уменьшаем шрифт <label> checkbox--*/
+ .modal-win-label-checkbox
+  { font-size: 10px;  }
+
+  /*--Задаем уменьшенный отступ--*/
+  .modal-win-span 
+  { margin-right: 4px; }
+
+/*--Отступ ссылки Privacy Policy--*/
+.modal-win-checkbox-link 
+{ margin-left: 2px; }
+
+}
+
+@media screen and (min-width: 428px)
+{
+.modal-win-label-checkbox 
+  { font-size: 12px; }
+
+
+.modal-win-span {
+  margin-right: 8px;
+}
+
+/*--Отступ ссылки Privacy Policy--*/
+.modal-win-checkbox-link {
+margin-left: 4px;
+}
+}
+
+/*--Задаем цвет ссылки Privacy Policy--*/
+.modal-win-checkbox-link 
+{ color: var(--logo-check-color); }
+
+
+/*--Описание span с вложенной svg-иконкой--*/
+.modal-win-span
+{
+ display: inline-flex;
+ align-items: center;
+ justify-content: center;
+ width: 16px;
+ height: 16px;
+ border: 1px solid rgba(46, 47, 66, 0.2);
+ border-radius: 2px;
+ /*--margin-right: 8px;---*/
+ fill: transparent;  
+}
+
+
+/*--Связываем реальный checkbox с фейковым--*/
+.modal-win-checkbox:checked + .modal-win-label-checkbox
+ > .modal-win-span
+{
+ background-color: #404bbf;
+ border: none;
+ fill: #ffff;
+ border-color: #404bbf;    
+}  
+
+
+/*--Описываем дополнительный span--*/
+.modal-win-add-span
+{ display: inline-flex; }
+ 
+
+/*--Кнопка Send модального окна--*/
+.modal-btn
+{
+ display: block;
+ border: none;
+ cursor: pointer; 
+ min-width: 169px;
+ min-height: 56px;
+ margin-left: auto;
+ margin-right: auto;
+ 
+background-color: var(--btn-color);
+box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+border-radius: 4px;
+
+font-weight: 500;
+font-size: 16px;
+line-height: 1.5;
+letter-spacing: 0.04em;
+color: #fff;
+transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/*--Описываем ховер и фокус модальной кнопки--*/
+.modal-btn:hover,
+.modal-btn:focus
+{ background-color: #404BBf;}
+
+
+/*----------------ПЛАНШЕТНАЯ ВЕРСИЯ-----------------*/
+
+@media screen and (min-width: 768px) {
+
+/*--Описание модального окна--*/
+  .modal-window 
+  {
+  width: 408px;
+  padding-left: 24px;
+  padding-right: 24px;
+  }
+
+}
+
+/*------------------ДЕСКТОПНАЯ ВЕРСИЯ-----------------*/
+
+/*--НОВЫХ УСЛОВИЙ для ДЕСКТОПНОЙ ВЕРСИИ НЕТ--*/
+
+/*-----------------------------------------------------*/
